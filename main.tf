@@ -146,8 +146,9 @@ locals {
 }
 
 module "ecs_alb_service_task" {
-  source  = "cloudposse/ecs-alb-service-task/aws"
-  version = "0.64.1"
+  #source  = "cloudposse/ecs-alb-service-task/aws"
+  #version = "0.64.1"
+  source  = "git@github.com:nimblerx/terraform-aws-ecs-alb-service-task.git?ref=main"
 
   alb_security_group                 = var.alb_security_group
   use_alb_security_group             = var.use_alb_security_group
@@ -182,9 +183,9 @@ module "ecs_alb_service_task" {
   deployment_minimum_healthy_percent = var.deployment_minimum_healthy_percent
   force_new_deployment               = var.force_new_deployment
   exec_enabled                       = var.exec_enabled
+  skip_destroy                       = var.task_skip_destroy
   task_policy_arns                   = var.task_policy_arns
   task_role_arn                      = var.task_role_arn
-  task_skip_destroy                  = var.task_skip_destroy
   propagate_tags                     = var.propagate_tags
   enable_ecs_managed_tags            = var.enable_ecs_managed_tags
   circuit_breaker_deployment_enabled = var.circuit_breaker_deployment_enabled
