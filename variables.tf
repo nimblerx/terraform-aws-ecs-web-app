@@ -138,6 +138,12 @@ variable "task_policy_arns" {
   default     = []
 }
 
+variable "task_skip_destroy" {
+  type        = bool
+  description = "Whether to retain the old revision when the resource is destroyed or replacement is necessary."
+  default     = false
+}
+
 variable "ignore_changes_task_definition" {
   type        = bool
   description = "Ignore changes (like environment variables) to the ECS task definition"
@@ -1139,5 +1145,11 @@ variable "circuit_breaker_deployment_enabled" {
 variable "circuit_breaker_rollback_enabled" {
   type        = bool
   description = "If `true`, Amazon ECS will roll back the service if a service deployment fails"
+  default     = false
+}
+
+variable "wait_for_steady_state" {
+  type        = bool
+  description = "wait for the service to reach a steady state (like aws ecs wait services-stable) before continuing"
   default     = false
 }

@@ -184,12 +184,14 @@ module "ecs_alb_service_task" {
   exec_enabled                       = var.exec_enabled
   task_policy_arns                   = var.task_policy_arns
   task_role_arn                      = var.task_role_arn
+  task_skip_destroy                  = var.task_skip_destroy
   propagate_tags                     = var.propagate_tags
   enable_ecs_managed_tags            = var.enable_ecs_managed_tags
   circuit_breaker_deployment_enabled = var.circuit_breaker_deployment_enabled
   circuit_breaker_rollback_enabled   = var.circuit_breaker_rollback_enabled
   permissions_boundary               = var.permissions_boundary
   runtime_platform                   = var.runtime_platform
+  wait_for_steady_state              = var.wait_for_steady_state
 
   context = module.this.context
 }

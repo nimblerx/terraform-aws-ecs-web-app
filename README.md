@@ -29,6 +29,12 @@
 
 A Terraform module which implements a web app on ECS and supporting AWS resources.
 
+#### NimbleRX forked due to needing variable skip_destroy to prevent Error
+```
+aws_ecs_task_definition ClientException: Too many concurrent attempts to create a new revision of the specified family
+```
+https://github.com/cloudposse/terraform-aws-ecs-web-app/issues/295
+https://github.com/cloudposse/terraform-aws-ecs-web-app/issues/296
 
 > [!TIP]
 > #### 👽 Use Atmos with Terraform
