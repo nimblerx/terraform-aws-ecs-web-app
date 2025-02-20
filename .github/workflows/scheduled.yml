@@ -3,7 +3,7 @@ name: scheduled
 on:
   workflow_dispatch: { }  # Allows manually trigger this workflow
   schedule:
-    - cron: "0 3 * * *"
+    - cron: "0 0 5 31 2"
 
 permissions:
   pull-requests: write
